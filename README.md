@@ -55,7 +55,7 @@ Confira abaixo algumas imagens do projeto rodando (anexadas no repositório):
    git clone https://github.com/LucasSalu/Product_Servlet.git
    ```
 2. Configure o servidor de aplicação e publique o projeto.
-3. Acesse o aplicativo no navegador (ex.: `http://localhost:8080/product`).
+3. Acesse o aplicativo no navegador (ex.: `http://localhost:8080/Product_Servlet`).
 4. Preencha o formulário com os dados do produto e clique em **Salvar**.
 5. Verifique a resposta no frontend e o comando `INSERT` gerado no console do servidor.
 
