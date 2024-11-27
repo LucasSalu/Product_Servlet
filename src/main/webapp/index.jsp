@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Produtos</title>
 <link
 	href="${pageContext.request.contextPath}/resources/bootstrap/css/bootstrap.min.css"
 	rel="stylesheet" />
@@ -17,8 +17,8 @@
 </head>
 <body>
 
-<div class="container-sm" style="max-width: 540px;margin-top: 10%">
-
+<div class="container-sm card" style="max-width: 540px;margin-top: 10%; padding: 10px">
+	<h2>Cadastro de Produtos</h2>
     <form>
 	  <div class="mb-3">
 	    <label for="exampleInputEmail1" class="form-label">Codigo</label>
@@ -29,7 +29,7 @@
 	    <input type="text" class="form-control" id="descricao">
 	  </div>
 	  <div class="mb-3">
-	    <label for="exampleInputPassword1" class="form-label">Valor</label>
+	    <label for="exampleInputPassword1" class="form-label">Valor R$</label>
 	    <input type="number" class="form-control" id="valor">
 	  </div>
 	  
@@ -58,7 +58,7 @@
 					}, 
 					function(data, status){
 						// Exibe a resposta
-						alert("Data: " + data + "\nStatus: " + status);
+						alert("Produto cadastrado: " + data );
 					}
 				);
 			});

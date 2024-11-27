@@ -9,12 +9,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import service.ProductService;
+
 /**
  * Servlet implementation class ProductServlet
  */
 @WebServlet("/product")
 public class ProductServlet extends HttpServlet {
+	
 	private static final long serialVersionUID = 1L;
+	
+	private ProductService service = new ProductService();
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -43,19 +48,21 @@ public class ProductServlet extends HttpServlet {
 	
 	protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html;charset=UTF-8");
+		
+        Long codigo = Long.parseLong(request.getParameter("codigo"));
+        String descricao = request.getParameter("descricao");
+        Double valor = Double.parseDouble(request.getParameter("valor"));
+        
+        Product product = new Product(1l, codigo, descricao, valor);
+        
+        String sql = this.service.salvarProduct(product);
+        System.out.println(sql);
+        
 		try(PrintWriter out = response.getWriter()){
-		        out.println("<!DOCTYPE html>");
-		        out.println("<html>");
-		        out.println("<head>");
-		        out.println("<title>Minha Telinha Bonita</title>");
-		        out.println("</head>");
-		        out.println("<body>");
-		        out.println("<div class='container'>");
-		        out.println("<h1>Bem-vindo!</h1>");
-		        out.println("<p>Essa é a sua telinha bonita.</p>");
-		        out.println("</div>");
-		        out.println("</body>");
-		        out.println("</html>");
+		        out.println(String.format("Codigo: %d",codigo));
+		        out.println(String.format("Descrição: %s",descricao));
+		        out.println(String.format("Valor: %.2f",valor));
+		        out.println(String.format("Valor: %s",sql));
 		}
 	}
 
