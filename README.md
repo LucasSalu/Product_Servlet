@@ -98,5 +98,11 @@ PRODUTOS (
 
 ---
 
-Para mais detalhes, acesse o [repositório no GitHub](<link-do-repositorio>).
+![image](https://github.com/user-attachments/assets/94f2ae0c-0d8a-430d-9504-3e5732dca88d)
+
+![image](https://github.com/user-attachments/assets/b089aa71-61b2-4aaa-9a42-be20dc7ca8e0)
+
+
+
+
 
